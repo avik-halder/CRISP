@@ -1,0 +1,137 @@
+:root{
+  --bg:#0b1020;
+  --card:#121a33;
+  --card2:#0f1730;
+  --text:#e8ecff;
+  --muted:#aab3d6;
+  --border:rgba(255,255,255,.08);
+  --shadow: 0 12px 30px rgba(0,0,0,.35);
+  --radius:18px;
+}
+
+*{ box-sizing: border-box; }
+body{ margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background: radial-gradient(1200px 600px at 20% 0%, #1b2a66 0%, var(--bg) 55%); color: var(--text); }
+
+.page{ min-height:100vh; }
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+  border-bottom:1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+.brand-title{ font-size:20px; font-weight:800; letter-spacing:.2px; }
+.brand-sub{ font-size:12px; color:var(--muted); margin-top:4px; }
+
+.topbar-right{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+
+.badge{
+  padding:7px 10px;
+  border-radius:999px;
+  font-size:12px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.04);
+}
+.badge-low{ box-shadow: inset 0 0 0 1px rgba(67,160,71,.25); }
+.badge-med{ box-shadow: inset 0 0 0 1px rgba(251,192,45,.25); }
+.badge-high{ box-shadow: inset 0 0 0 1px rgba(229,57,53,.25); }
+.badge-na{ box-shadow: inset 0 0 0 1px rgba(158,158,158,.25); }
+
+.layout{
+  display:grid;
+  grid-template-columns: 340px 1fr;
+  gap:16px;
+  padding:16px;
+}
+
+.sidebar{ display:flex; flex-direction:column; gap:16px; }
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding:14px;
+  box-shadow: var(--shadow);
+}
+.card-title{ font-weight:800; margin-bottom:10px; }
+.row{ display:flex; flex-direction:column; gap:6px; margin-bottom:10px; }
+label{ font-size:12px; color: var(--muted); }
+.input{
+  padding:10px 10px;
+  border-radius: 12px;
+  border:1px solid var(--border);
+  background: rgba(0,0,0,.25);
+  color: var(--text);
+  outline:none;
+}
+.input:focus{ border-color: rgba(255,255,255,.18); }
+
+.btn-row{ display:flex; gap:10px; margin-top:6px; }
+.btn{
+  padding:10px 12px;
+  border-radius: 12px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  cursor:pointer;
+  font-weight:700;
+}
+.btn:hover{ background: rgba(255,255,255,.10); }
+.btn:disabled{ opacity:.55; cursor:not-allowed; }
+.btn.primary{
+  background: linear-gradient(180deg, rgba(99,102,241,.9), rgba(79,70,229,.9));
+  border-color: rgba(99,102,241,.35);
+}
+.hint{ margin-top:10px; font-size:12px; color:var(--muted); }
+
+.legend{ }
+.legend-row{ display:flex; align-items:center; gap:10px; margin-top:8px; color: var(--muted); font-size:13px; }
+.dot{ width:12px; height:12px; border-radius:999px; display:inline-block; }
+.dot-low{ background:#43a047; }
+.dot-med{ background:#fbc02d; }
+.dot-high{ background:#e53935; }
+.dot-na{ background:#9e9e9e; }
+
+.mapwrap{ }
+.mapcard{
+  overflow:hidden;
+  border-radius: var(--radius);
+  border:1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--card2);
+}
+
+.toast{
+  margin:12px 16px 0;
+  padding:12px 14px;
+  border-radius: 14px;
+  border:1px solid rgba(229,57,53,.35);
+  background: rgba(229,57,53,.12);
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.toast-x{ opacity:.9; }
+
+.popup{ min-width: 230px; }
+.popup-title{ font-weight:900; margin-bottom:10px; }
+.popup-row{ display:flex; justify-content:space-between; gap:12px; margin-top:8px; }
+.popup-row .k{ color:#3b415c; font-weight:700; } /* Leaflet popup bg is white, so darker text */
+.popup-row .v{ font-weight:800; color:#0b1020; }
+.muted{ color: var(--muted); }
+
+.pill{
+  padding:4px 10px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:12px;
+  border:1px solid rgba(0,0,0,.12);
+}
+.pill-low{ background: rgba(67,160,71,.15); color:#1b5e20; }
+.pill-medium{ background: rgba(251,192,45,.20); color:#6d4c41; }
+.pill-high{ background: rgba(229,57,53,.15); color:#b71c1c; }
+
+@media (max-width: 1000px){
+  .layout{ grid-template-columns: 1fr; }
+}
