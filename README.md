@@ -2,6 +2,8 @@
 
 CRISP is an explainable stacked hybrid framework for crime risk forecasting in Bangladesh. It combines historical crime data, time-series feature engineering, machine learning models, risk classification, SHAP-based explainability, and an interactive dashboard for crime risk visualization.
 
+<img src="frontend/src/assets/dashboard.png" width="auto">
+
 ---
 
 ## Features
